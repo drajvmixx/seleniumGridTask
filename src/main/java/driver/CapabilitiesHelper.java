@@ -15,7 +15,7 @@ public class CapabilitiesHelper {
         return capability;
     }
 
-    private static DesiredCapabilities getFirefoxCapabilities() {
+    public static DesiredCapabilities getFirefoxCapabilities() {
         System.setProperty("webdriver.gecko.driver", "C:\\work\\FrameworkTemplate\\src\\main\\resources\\geckodriver.exe");
         DesiredCapabilities capability;
         capability = DesiredCapabilities.firefox();
@@ -23,7 +23,7 @@ public class CapabilitiesHelper {
         return capability;
     }
 
-    private static DesiredCapabilities getChromeCapabilities() {
+    public static DesiredCapabilities getChromeCapabilities() {
         System.setProperty("webdriver.chrome.driver", "C:\\work\\FrameworkTemplate\\src\\main\\resources\\chromedriver.exe");
         DesiredCapabilities capability;
         capability = DesiredCapabilities.chrome();

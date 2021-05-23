@@ -2,19 +2,44 @@ package desktop.pages;
 
 import abstractClasses.page.AbstractPage;
 import driver.SingletonDriver;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import utils.WebDriverWaiter;
 
+import static constants.Constants.WEB_URL;
 import static driver.SingletonDriver.getDriver;
 
 public class LoginPage extends AbstractPage {
-    private static final String pageUrl = "https://qa.health.epam.com/v1/sso/imitation/login?username=Vitali_Kastsian@epam.com&upsaId=Vitali_Kastsian@epam.com&fullName=1";
+
+    @FindBy(xpath = "//*[@id=\"onetrust-accept-btn-handler\"]")
+    private WebElement allowCookies;
+
+    @FindBy(xpath = "//*[@button-label=\"Naar Kruidvat.nl\"]")
+    private WebElement chooseLanguage;
 
     public LoginPage(SingletonDriver.Type type) {
         super(getDriver(type));
-        setPageUrl(pageUrl);
+        setPageUrl(WEB_URL);
     }
 
-    public void loginAsUser() {
-        driver.navigate().to(pageUrl);
+    public void proceedToApp() {
+        driver.navigate().to(WEB_URL);
+    }
+
+    public void deleteAllCookies(){
+        driver.manage().deleteAllCookies();
+    }
+
+    public void addCertainCookies(Cookie cookie){
+        driver.manage().addCookie(cookie);
+    }
+
+    public void closeAllowCookiesMessage() {
+        WebDriverWaiter.waitVisibilityOfElement(driver, allowCookies);
+        allowCookies.click();
+
+        WebDriverWaiter.waitVisibilityOfElement(driver, chooseLanguage);
+        chooseLanguage.click();
     }
 }

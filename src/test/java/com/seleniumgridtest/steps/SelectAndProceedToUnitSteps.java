@@ -13,7 +13,7 @@ import org.junit.Assert;
 import static driver.SingletonDriver.Type.CHROME;
 
 public class SelectAndProceedToUnitSteps {
-    @Given("I login as user in (CHROME|FIREFOX)$")
+  /*  @Given("I login as user in (CHROME|FIREFOX)$")
     public void loginAsUser(SingletonDriver.Type type) {
         new LoginPage(type).loginAsUser();
     }
@@ -53,5 +53,5 @@ public class SelectAndProceedToUnitSteps {
     @Then("I am redirected to certain unit with appropriate url and name")
     public void testUserIsRedirected() {
         Assert.assertEquals(new MainPage(CHROME).returnUnitNameFromTreemap(),  new UnitPage(CHROME).currentUnitName());
-    }
+    }*/
 }

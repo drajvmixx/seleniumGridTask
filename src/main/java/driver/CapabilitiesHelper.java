@@ -1,7 +1,12 @@
 package driver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.logging.Level;
 
 public class CapabilitiesHelper {
 
@@ -29,5 +34,13 @@ public class CapabilitiesHelper {
         capability = DesiredCapabilities.chrome();
         capability.setBrowserName("chrome");
         return capability;
+    }
+
+    public static ChromeOptions getChromeOptions() {
+        ChromeOptions chromeOptions = new ChromeOptions();
+//        System.setProperty("webdriver.chrome.logfile", "D:\\chromedriver.log");
+//        System.setProperty("webdriver.chrome.verboseLogging", "true");
+        System.setProperty("webdriver.chrome.driver", "C:\\work\\FrameworkTemplate\\src\\main\\resources\\chromedriver.exe");
+        return chromeOptions;
     }
 }

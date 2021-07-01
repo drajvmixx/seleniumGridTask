@@ -1,16 +1,17 @@
-@Regression
+@Netherlands
 Feature: REST API testing hometask
 
   @ToTest
+  @MyTag
   Scenario: Add product via API
     Given I create session
     When I add product to cart
     Then product is added
 
   @ToTest
-  Scenario: Authenticate to web application by adding "kvn-cart" cookie with “guid” value to the browser via UI
+  Scenario: Authenticate to web application by adding 'kvn-cart' cookie with 'guid' value to the browser via UI
   Given I proceed to app
-    And I clear all cookies before setting “kvn-cart” cookie
+    And I clear all cookies before setting 'kvn-cart' cookie
     And I close Allow Cookies message
     When I add certain cookies
     Then refresh page

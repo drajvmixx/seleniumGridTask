@@ -2,11 +2,6 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import static constants.Constants.WAIT_TIMEOUT;
@@ -22,7 +17,6 @@ public class SingletonDriver {
         WebDriver localDriver = driver.get();
 
         if (localDriver == null) {
-            System.setProperty("webdriver.chrome.driver", "C:\\work\\FrameworkTemplate\\src\\main\\resources\\chromedriver.exe");
             localDriver = new ChromeDriver(getChromeOptions());
             localDriver.manage().window().maximize();
             localDriver.manage().timeouts().implicitlyWait(WAIT_TIMEOUT, TimeUnit.SECONDS);

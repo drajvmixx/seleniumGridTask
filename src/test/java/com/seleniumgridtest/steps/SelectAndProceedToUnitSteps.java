@@ -8,12 +8,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 
 import static driver.SingletonDriver.Type.CHROME;
 
 public class SelectAndProceedToUnitSteps {
-  /*  @Given("I login as user in (CHROME|FIREFOX)$")
+    /*
+    @Given("I login as user in (CHROME|FIREFOX)$")
     public void loginAsUser(SingletonDriver.Type type) {
         new LoginPage(type).loginAsUser();
     }

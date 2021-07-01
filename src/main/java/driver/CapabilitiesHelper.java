@@ -21,7 +21,7 @@ public class CapabilitiesHelper {
     }
 
     public static DesiredCapabilities getFirefoxCapabilities() {
-        System.setProperty("webdriver.gecko.driver", "C:\\work\\FrameworkTemplate\\src\\main\\resources\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "C:\\work\\SeleniumEasyTest2-master\\SeleniumEasyTest2-master\\src\\main\\resources\\geckodriver.exe");
         DesiredCapabilities capability;
         capability = DesiredCapabilities.firefox();
         capability.setBrowserName("firefox");
@@ -29,7 +29,7 @@ public class CapabilitiesHelper {
     }
 
     public static DesiredCapabilities getChromeCapabilities() {
-        System.setProperty("webdriver.chrome.driver", "C:\\work\\FrameworkTemplate\\src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\work\\SeleniumEasyTest2-master\\SeleniumEasyTest2-master\\src\\main\\resources\\chromedriver.exe");
         DesiredCapabilities capability;
         capability = DesiredCapabilities.chrome();
         capability.setBrowserName("chrome");
@@ -38,9 +38,7 @@ public class CapabilitiesHelper {
 
     public static ChromeOptions getChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
-//        System.setProperty("webdriver.chrome.logfile", "D:\\chromedriver.log");
-//        System.setProperty("webdriver.chrome.verboseLogging", "true");
-        System.setProperty("webdriver.chrome.driver", "C:\\work\\FrameworkTemplate\\src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\work\\SeleniumEasyTest2-master\\SeleniumEasyTest2-master\\src\\main\\resources\\chromedriver.exe");
         return chromeOptions;
     }
 }
